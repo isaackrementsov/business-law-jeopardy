@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+body, html {
+    margin: 0;
+    background-color: #1A237E;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+table {
+    background-color: #303F9F;
+    width: 75%;
+}
+th, td {
+    border-style: solid;
+    padding: 4vh 0;
+    font-size: 1.6vw;
+    font-weight: bold;
+    border-color: #1A237E;
+    transition: 0.3s ease-in-out;
+}
+td {
+    color: #FFEB3B;
+    text-align: center;
+}
+td:hover {
+    border-color: #FFEB3B;
+}
+#show-question, #add-teams {
+    z-index: 2;
+    background-color: rgba(50, 50, 50, 0.7);
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+}
+#show-question-content {
+    box-sizing: border-box;
+    display: block;
+    position: fixed;
+    top: 30vh;
+    right: 25vw;
+    height: 20vw;
+    width: 50vw;
+    padding: 4vh 2vw;
+    border-style: hidden;
+    border-radius: 10px;
+    background-color: #303F9F;
+    font-size: 2vw;
+}
+#answer-content {
+    margin-bottom: 3vh;
+}
+#question {
+    display: block;
+    overflow: auto;
+    height: 12.99vw;
+    margin-bottom: 3vw;
+
+}
+#answer-content {
+    box-sizing: border-box;
+    padding: 1.5vh 1vw;
+    position: absolute;
+    bottom: -3vh;
+    left: 0;
+    background-color: #1A237E;
+    width: 50vw;
+    border-style: hidden;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+input[type="text"] {
+    background-color: #303F9F;
+    border-style: hidden;
+    border-radius: 3px;
+    padding: 1vh 1vw;
+    font-size: 1.7vw;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+input[type="text"]::placeholder {
+    color: lightgrey;
+}
+input[type="text"]:focus {
+    outline: none;
+}
+#body div, #body table {
+    display: inline-block;
+    vertical-align: top;
+}
+#teams {
+    display: block;
+    padding: 0.5vh 1.5vw;
+    position: fixed;
+    width: 21%;
+    height: 90%;
+    overflow: auto;
+}
+#add-teams {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#add-team, .add-team-wrapper {
+    font-size: 1.7vw;
+    background-color: #1A237E;
+    padding: 2.5vh 1.5vw;
+    border-style: hidden;
+    border-radius: 10px;
+    margin: 0 1.2vw;
+}
+.add-team-wrapper .team-added {
+    font-weight: bold;
+}
+.add-team-wrapper p {
+    font-size: 1.2vw;
+}
+#add-team * {
+    margin: 1vh 0;
+}
+button {
+    font-family: 'Courier New', Courier, monospace;
+}
+#add-team button {
+    padding: 1vh 1vw;
+    font-size: 1.2vw;
+    border-style: hidden;
+    border-radius: 5px;
+    background-color: #FFEB3B;
+}
+.outer-team {
+    display: block;
+    width: 90%;
+    padding: 2vh 1.5vw;
+    font-size: 1.5vw;
+    border-style: solid;
+    border-color: #303F9F;
+    border-radius: 5px;
+    margin: 1vh 0;
+}
+.outer-team .team-added {
+    font-weight: bold;
+}
+.outer-team p {
+    font-size: 1vw;
+}
+button:focus {
+    outline: none;
+}
+.ok {
+    padding: 1vh 1vw;
+    font-size: 1.7vw;
+    background-color: transparent;
+    color: whitesmoke;
+    border-style: hidden;
+    transition: 0.5s ease-in-out;
+    font-weight: bold;
+}
+.ok:hover {
+    color: #FFEB3B;
+}
+.inline > * {
+    display: inline-block;
+    vertical-align: top;
+}
+#timer {
+    font-size: 2.8vw;
+    float: right;
+    vertical-align: middle;
+    color: #FFEB3B;
+    font-weight: bold;
+}
+#bonus {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    font-weight: bold;
+    font-size: 5vw;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Business Law Jeopardy</title>
+        <link rel="stylesheet" type="text/css" href="assets/main.css">
+    </head>
+    <body>
+        <div id="add-teams">
+            <div id="add-team">
+                <input type="text" id="name" placeholder="Team name"><br>
+                <button onclick="addTeam()" style="background-color: #FFF9C4">Add</button>
+                <button onclick="closeTeams()">Begin</button>
+            </div>
+        </div>
+        <div id="body">
+            <table id="table">
+                <tr>
+                    <th>Offers & Acceptance</th>
+                    <th>Capacity & Legality</th>
+                    <th>Agreement & Consideration</th>
+                    <th>Contract Characteristics</th>
+                    <th>Ending a Contract</th>
+                    <th>Discharge & Remedies</th>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>200</td>
+                    <td>200</td>
+                    <td>200</td>
+                    <td>200</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>300</td>
+                </tr>
+                <tr>
+                    <td>400</td>
+                    <td>400</td>
+                    <td>400</td>
+                    <td>400</td>
+                    <td>400</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>500</td>
+                    <td>500</td>
+                    <td>500</td>
+                    <td>500</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Bonus</td>
+                    <td>Bonus</td>
+                    <td>Bonus</td>
+                    <td>Bonus</td>
+                    <td>Bonus</td>
+                    <td>Bonus</td>
+                </tr>
+            </table>
+            <div id="teams">
+                <h1>Teams</h1>
+            </div>
+        </div>
+        <div id="show-question" style="display: none">
+            <div id="bonus" style="display:none;color:#FFEB3B">BONUS</div>
+            <div id="show-question-content">
+                <div id="question"></div>
+                <div id="answer-content">
+                    What is
+                    <input type="text" id="answer">
+                    ?
+                    <span id="timer">
+                        0
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script src="assets/main.js"></script>
+    </body>
+</html>
