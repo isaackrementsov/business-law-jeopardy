@@ -184,7 +184,7 @@ function cleanup(str){
     return str.trim().toLowerCase();
 }
 function numberLottery(){
-    return 100*Math.round(5*(Math.random()/Math.random())*Math.random()*Math.random()*Math.pow(Math.random()/Math.random(), 10*Math.random()*Math.random()));
+    return 100*Math.round(5*(Math.random()/Math.random())*Math.random()*Math.random()*Math.pow(Math.random()/Math.random(), 10*Math.random()*Math.random()) + 5*(Math.random()/Math.random())*Math.random()*Math.random()*Math.pow(Math.random()/Math.random(), 10*Math.random()*Math.random()));
 }
 function init(){
     Array.prototype.forEach.call(rows, function(row, i){
