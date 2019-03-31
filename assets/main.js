@@ -47,7 +47,7 @@ questions = questions.concat([
     {q: ' An agreement is not a contract unless it contains _______', a: '6 elements of a contract'},
     {q: 'Able to cancel or get out of', a: 'Voidable'},
     {q: 'When one party assigns their benefits to a third party', a: 'Transfer of Rights'},
-    {q: 'A contract can be revoke any time before it is ______', a: 'Accepted'},
+    {q: 'A contract can be revoked any time before it is ______', a: 'Accepted'},
 
     {q: 'A basic requirement of acceptance', a: ['Unconditional', 'Follow Rules']},
     {q: 'A contract that cannot be upheld by the law', a: 'Unenforceable'},
@@ -184,7 +184,7 @@ function cleanup(str){
     return str.trim().toLowerCase();
 }
 function numberLottery(){
-    return 100*Math.round((Math.random()/Math.random())*Math.random()*Math.random()*Math.pow(Math.random()/Math.random(), 10*Math.random()*Math.random()));
+    return 100*Math.round(5*(Math.random()/Math.random())*Math.random()*Math.random()*Math.pow(Math.random()/Math.random(), 10*Math.random()*Math.random()));
 }
 function init(){
     Array.prototype.forEach.call(rows, function(row, i){
