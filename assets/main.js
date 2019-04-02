@@ -142,6 +142,7 @@ function acceptAnswer(answer){
         isBonus = true;
         currentQuestion.price = numberLottery();
         window.clearInterval(wedgeIntervalID);
+        x = 0;
         document.body.removeChild(document.getElementById('wedge'));
     }
     if(correct){
