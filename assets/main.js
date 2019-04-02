@@ -13,6 +13,8 @@ var currentIndex;
 var currentTeam;
 var intervalID;
 var flashIntervalID;
+var wedgeIntervalID;
+var x = 0;
 var handlers = [];
 var teams = [];
 var questions = [];
@@ -74,17 +76,23 @@ init();
 function showQuestion(idx){
     pauseAnswer = false;
     var question = questions[idx];
+    var wedge = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSACnoP5zCtvu-jXSaq4tFNRlclRSzF04ctAH-zMVxo1lFqHt6m';
     currentQuestion = question;
     box.style.display = 'block';
     content.innerHTML = question.q;
     currentAnswer = question.a;
     currentIndex = idx;
     if(question.price > 500){
+        var img = document.createElement('IMG');
+        img.src = wedge;
+        img.id = 'wedge';
+        document.body.appendChild(img);
         time = 90;
         audio = new Audio('assets/trap.mp3');
         bonus.style.display = 'block';
         bonus.style.top = Math.round(content.getBoundingClientRect().top - bonus.offsetHeight - 100) + 'px';
         flashIntervalID = setInterval(flash, 100);
+        wedgeIntervalID = setInterval(fadeWedge, 100);
     }else{
         time = 30;
         audio = new Audio('assets/std.mp3');
@@ -133,6 +141,8 @@ function acceptAnswer(answer){
     if(currentQuestion.price > 500){
         isBonus = true;
         currentQuestion.price = numberLottery();
+        window.removeEventListener(wedgeIntervalID);
+        document.body.removeChild(document.getElementById('wedge'));
     }
     if(correct){
         content.innerHTML = `
@@ -234,5 +244,14 @@ function flash(){
         bonus.style.color = '#FFEB3B';
     }else{
         bonus.style.color = '#303F9F';
+    }
+}
+function fadeWedge(){
+    var elem = document.getElementById('wedge');
+    x++;
+    if(x % 2 == 0){
+        elem.style.opacity = Math.log(x)/50;
+    }else{
+        elem.style.opacity = Math.log(x-1)/50;
     }
 }
