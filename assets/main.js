@@ -105,6 +105,7 @@ function acceptAnswer(answer){
     audio.currentTime = 0;
     pauseAnswer = true;
     var correct = false;
+    var isBonus = false;
     var cleaned = cleanup(answer);
     if(currentAnswer instanceof Array){
         if(currentQuestion.q.includes('(all)')){
@@ -130,11 +131,12 @@ function acceptAnswer(answer){
         }
     }
     if(currentQuestion.price > 500){
+        isBonus = true;
         currentQuestion.price = numberLottery();
     }
     if(correct){
         content.innerHTML = `
-            <span style="color: #81C784">Correct</span><p>You got ${currentQuestion.price} points!</p>
+            <span style="color: #81C784">${isBonus && currentQuestion.price < 500 ? 'Sorry, ' : 'Congratulations, '}</span><p>You got ${currentQuestion.price} points!</p>
             <button class="ok" onclick="closeQuestion(${currentIndex}, true)">Ok</button>
         `;
         addPoints(currentQuestion.price);
@@ -165,6 +167,7 @@ function closeQuestion(idx, correct){
         cell.innerHTML = '&#10008';
     }
     cell.removeEventListener('click', handlers[idx]);
+    cell.style.cursor = 'auto';  
     box.style.display = 'none';
     turn = turn < teams.length - 1? turn + 1 : 0;
     currentTeam.style.borderColor = '#303F9F';
