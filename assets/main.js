@@ -141,7 +141,7 @@ function acceptAnswer(answer){
     if(currentQuestion.price > 500){
         isBonus = true;
         currentQuestion.price = numberLottery();
-        window.removeEventListener(wedgeIntervalID);
+        window.clearInterval(wedgeIntervalID);
         document.body.removeChild(document.getElementById('wedge'));
     }
     if(correct){
