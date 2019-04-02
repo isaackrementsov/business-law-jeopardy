@@ -115,6 +115,7 @@ function acceptAnswer(answer){
     var correct = false;
     var isBonus = false;
     var cleaned = cleanup(answer);
+    var soundEffect = 'right';
     if(currentAnswer instanceof Array){
         if(currentQuestion.q.includes('(all)')){
             var arr = cleaned.split(',');
@@ -141,17 +142,21 @@ function acceptAnswer(answer){
     if(currentQuestion.price > 500){
         isBonus = true;
         currentQuestion.price = numberLottery();
+        if(currentQuestion.price < 300){
+            soundEffect = 'trombone';
+        }
         window.clearInterval(wedgeIntervalID);
         x = 0;
         document.body.removeChild(document.getElementById('wedge'));
     }
     if(correct){
         content.innerHTML = `
-            <span style="color: #81C784">${isBonus && currentQuestion.price < 500 ? 'Sorry, ' : 'Congratulations, '}</span><p>You got ${currentQuestion.price} points!</p>
+            <span style="color: #81C784">${isBonus && currentQuestion.price < 300 ? 'Sorry, ' : 'Congratulations, '}</span><p>You got ${currentQuestion.price} points!</p>
             <button class="ok" onclick="closeQuestion(${currentIndex}, true)">Ok</button>
         `;
         addPoints(currentQuestion.price);
     }else{
+        soundEffect = 'wrong';
         content.innerHTML = `
             <span style="color: #E57373">Wrong</span>
             <p>The answer was ${currentAnswer instanceof Array ? currentAnswer.map(e => ' ' + e) : currentAnswer}</p>
@@ -161,6 +166,8 @@ function acceptAnswer(answer){
             </div>
         `;
     }
+    var resp = new Audio(`assets/${soundEffect}.mp3`);
+    resp.play();
 }
 function closeTeams(){
     if(teams.length > 0){
